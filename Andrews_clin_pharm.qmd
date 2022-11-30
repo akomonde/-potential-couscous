@@ -4,20 +4,24 @@ format: html
 editor: visual
 ---
 
-1.  Data
+1.  11/30/22 Data
 
     ```{r}
 
-    library(readr)
-    adae <- read_csv("https://rhoinc.github.io/data-library/data/clinical-trials/adam/adae.csv")
-    View(adae)
+
+    library(haven)
+    adae1 <- read_sas("https://github.com/elong0527/r4csr/raw/master/data-adam/adae.sas7bdat", 
+        NULL)
+
+    adae1
+
     ```
 
 2.  Viz
 
 ```{r}
 library(ggplot2)
-ggplot(adae) +
+ggplot(adae1) +
   aes(x = AESEV, y = AGE, fill = SEX) +
   geom_col() +
   scale_fill_hue(direction = 1) +
@@ -29,5 +33,13 @@ ggplot(adae) +
 
 ```{r}
 library(plotly)
-dv1 <-librabry(ggplot2)
+library(ggplot2)
+
+
+ggplot(adae1) +
+  aes(x = AESEV, y = AGE, fill = SEX) +
+  geom_col() +
+  scale_fill_hue(direction = 1) +
+  theme_minimal()
+
 ```
