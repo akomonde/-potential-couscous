@@ -1,0 +1,33 @@
+---
+title: "Andrewsquarto"
+format: html
+editor: visual
+---
+
+1.  Data
+
+    ```{r}
+
+    library(readr)
+    adae <- read_csv("https://rhoinc.github.io/data-library/data/clinical-trials/adam/adae.csv")
+    View(adae)
+    ```
+
+2.  Viz
+
+```{r}
+library(ggplot2)
+ggplot(adae) +
+  aes(x = AESEV, y = AGE, fill = SEX) +
+  geom_col() +
+  scale_fill_hue(direction = 1) +
+  theme_minimal()
+
+```
+
+3.Int Viz
+
+```{r}
+library(plotly)
+dv1 <-librabry(ggplot2)
+```
