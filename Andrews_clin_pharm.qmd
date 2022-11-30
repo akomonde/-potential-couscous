@@ -35,11 +35,13 @@ ggplot(adae1) +
 library(plotly)
 library(ggplot2)
 
-
-ggplot(adae1) +
+dv1 <- ggplot(adae1) +
   aes(x = AESEV, y = AGE, fill = SEX) +
   geom_col() +
   scale_fill_hue(direction = 1) +
   theme_minimal()
+
+ggplotly(dv1)
+
 
 ```
